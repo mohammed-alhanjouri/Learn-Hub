@@ -17,6 +17,11 @@ a {
     line-height: 1;
     cursor: pointer;
 }
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 .btn {
     background-color: white;
     color: #212121;
@@ -27,8 +32,14 @@ a {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.btn:hover {
+    background-color: #e0e0e0;
+}
 
 .dark-btn {
     background-color: #212EA0;
     color: white;
+}
+.dark-btn:hover {
+    background-color: #007bff;
 }
