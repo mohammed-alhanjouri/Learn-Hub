@@ -26,11 +26,11 @@ const Navbar = () => {
         <h1>LearnHub</h1>
       </div>
       <ul>
-        <li>Home</li>
-        <li>Program</li>
-        <li>About Us</li>
-        <li>Campus</li>
-        <li>Testimonials</li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Program</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Campus</a></li>
+        <li><a href="">Testimonials</a></li>
         <li><button className='btn'>Contact Us</button></li>
       </ul>
     </nav>

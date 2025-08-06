@@ -37,6 +37,14 @@
 .navbar ul li {
     font-size: 1rem;
 }
+.navbar ul li a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.navbar ul li a:hover {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
 
 .colored-nav {
     background-color: #212EA0;
