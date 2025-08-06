@@ -6,7 +6,6 @@
 
 .next-btn,
 .prev-btn {
-    /* margin: 0 100px; */
     position: absolute;
     top: 50%;
     right: 0;
@@ -19,11 +18,16 @@
     background-color: #212EA0;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .prev-btn {
     left: 0;
     right: auto;
+}
+
+.next-btn:hover, .prev-btn:hover {
+    background-color: #007bff;
 }
 
 .testimonial {
@@ -34,7 +38,7 @@
     display: flex;
     width: 200%;
     overflow-x: hidden;
-    transition: 0.5s ease;
+    /* transition: transform 0.4s ease; */
 }
 
 .testimonial ul li {

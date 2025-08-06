@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRef, useState } from 'react';
 import './Testimonials.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'
@@ -9,12 +10,29 @@ import userImage4 from '../../assets/user4.png'
 
 
 const Testimonials = () => {
+    // Functionality for next and previous buttons 
+    
+    const listRef = useRef(null);
+    const [tx, setTx] = useState(0);
+
+    const nextTestimonial = () => {
+        if (tx > -50) {
+            setTx(tx - 25);
+        }
+    }
+
+    const prevTestimonial = () => {
+        if (tx < 0) {
+            setTx(tx + 25);
+        }
+    }
+
   return (
     <div className="testimonials">
-      <FontAwesomeIcon icon={faAngleRight} className="next-btn" />
-      <FontAwesomeIcon icon={faAngleLeft} className="prev-btn" />
+      <FontAwesomeIcon icon={faAngleRight} className="next-btn" onClick={nextTestimonial}/>
+      <FontAwesomeIcon icon={faAngleLeft} className="prev-btn" onClick={prevTestimonial}/>
       <div className="testimonial">
-        <ul>
+        <ul ref={listRef} style={{ transform: `translateX(${tx}%)`, transition: 'transform 0.4s ease' }}>
             <li>
                 <div className="testimonial-card">
                     <div className="user-info">
