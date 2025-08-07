@@ -7,8 +7,30 @@ import { faMessage, faEnvelope, faPhone, faLocationDot, faPaperPlane} from '@for
 
 
 const Contact = () => {
+    const [result, setResult] = useState("");
 
-    
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "699d47c5-6152-4bc0-a7f8-d661557ebbcd");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+        } else {
+        console.log("Error", data);
+        setResult(data.message);
+        }
+    };
 
   return (
     <div className="contact">
@@ -26,7 +48,7 @@ const Contact = () => {
             </ul>
         </div>
         <div className="contact-col">
-            <form>
+            <form onSubmit={onSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
                 <input type="text" name="name" placeholder="Enter Your Name" required />
@@ -41,6 +63,7 @@ const Contact = () => {
                 </div>
                 <button type="submit" className="btn dark-btn">Send Message <FontAwesomeIcon icon={faPaperPlane} /></button>
             </form>
+            <span>{result}</span>
         </div>
     </div>
   )
