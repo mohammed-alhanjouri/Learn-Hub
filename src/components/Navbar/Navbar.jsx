@@ -4,6 +4,7 @@ import './Navbar.css'
 // import logo from '../../assets/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
   const [isColored, setIsColored] = useState(false);
@@ -26,12 +27,12 @@ const Navbar = () => {
         <h1>LearnHub</h1>
       </div>
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Program</a></li>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Campus</a></li>
-        <li><a href="">Testimonials</a></li>
-        <li><button className='btn'>Contact Us</button></li>
+        <li> <Link to='hero' smooth={true} offset={0} duration={500}> Home </Link></li>
+        <li> <Link to='programs' smooth={true} offset={-260} duration={500}> Program </Link></li>
+        <li> <Link to='about' smooth={true} offset={-150} duration={500}> About Us </Link></li>
+        <li> <Link to='campus' smooth={true} offset={-260} duration={500}> Campus </Link></li>
+        <li> <Link to='testimonials' smooth={true} offset={-260} duration={500}> Testimonials </Link></li>
+        <li> <Link to='contact' smooth={true} offset={-260} duration={500}><button className='btn'>Contact Us</button> </Link></li>
       </ul>
     </nav>
   )
